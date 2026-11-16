@@ -1,0 +1,27 @@
+# LOCAL profile (this laptop, CPU). Pinned to the versions already installed here. Exact versions: the same code gives the same result next month.
+# Install:  pip install -r requirements.txt
+# The offline path (color_hist encoder + tests) needs only the first block.
+
+# --- always ---
+pydantic==2.10.3
+pydantic-settings==2.6.1
+pillow==11.1.0
+numpy==2.1.3
+pytest==8.3.4
+
+# --- the API + MCP server ---
+fastapi==0.128.5
+uvicorn==0.40.0
+python-multipart==0.0.22      # FastAPI needs it to read uploaded photos
+httpx==0.28.1                 # smoke tests + FastAPI's TestClient
+fastmcp==4.1.1
+
+# --- real encoders (dinov2_small, siglip2_base) and optional cropping (owlv2) ---
+# torch is already installed on this machine; transformers adds ~10 MB, the models download on first use.
+transformers==5.20.1
+
+# --- re-ranking through OpenRouter (optional) ---
+openai==3.35.1
+
+# --- only for VPI_AUTH_MODE=google (Cloud Run, later) ---
+# google-auth==2.43.0

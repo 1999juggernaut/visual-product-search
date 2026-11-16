@@ -1,0 +1,10 @@
+# minimal set for the offline test suite (color_hist encoder, fake re-ranker)
+pydantic==2.10.3
+pydantic-settings==2.6.1
+pillow==11.1.0
+numpy==2.1.3
+pytest==8.3.4
+fastapi==0.128.5
+uvicorn==0.40.0
+python-multipart==0.0.22
+httpx==0.28.1
